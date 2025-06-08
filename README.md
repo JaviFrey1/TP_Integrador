@@ -6,6 +6,10 @@ Este proyecto implementa y compara tres algoritmos de ordenamiento clásicos en 
 
 Javier Gomez Frey
 
+## Link al video
+
+[Youtube](https://youtu.be/9Sd2ceNGh-8)
+
 ## Descripción
 
 El programa realiza una comparación práctica de tres algoritmos de ordenamiento diferentes, midiendo sus tiempos de ejecución con arrays de distintos tamaños y generando visualizaciones comparativas.

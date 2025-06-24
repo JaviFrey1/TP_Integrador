@@ -1,0 +1,141 @@
+﻿Algoritmos de Búsqueda y Ordenamiento
+
+
+Alumno
+Javier Gomez Frey - javierfreyy@gmail.com
+Materia
+Programación I
+Profesor
+Ariel Enferrel
+Fecha de entrega
+20 de junio
+
+
+Introducción
+1. Introducción
+2. Marco Teórico
+3. Caso Práctico
+4. Metodología Utilizada
+5. Resultados Obtenidos
+6. Conclusiones
+7. Bibliografía
+Introducción
+En la programación, los algoritmos de ordenamiento son fundamentales para la gestión eficiente de la información y el procesamiento de datos. Comprender cómo se implementan, sus características de rendimiento y en qué situaciones se aplican es clave para el desarrollo de software efectivo. Este trabajo explora tres algoritmos de ordenamiento fundamentales: Bubble Sort, Merge Sort y Quick Sort, incluyendo un análisis comparativo de sus rendimientos y complejidades computacionales.
+
+
+Marco Teórico
+Los algoritmos de ordenamiento permiten reorganizar una colección de elementos de acuerdo a un criterio específico (mayor a menor, menor a mayor, alfabéticamente, etc.).
+Para este trabajo práctico, desarrolle y profundice especialmente en los siguientes 3 algoritmos:
+
+
+- Bubble Sort (Ordenamiento Burbuja): Compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto. Su complejidad temporal es O(n²) y espacial O(1), siendo eficiente para listas pequeñas pero ineficiente para grandes volúmenes de datos.
+
+
+- Merge Sort (Ordenamiento por Mezcla): Utiliza el enfoque de "divide y conquista", dividiendo la lista en mitades, ordenandolas de manera recursiva y luego combinándolas. Su complejidad  temporal es O(n log n) y espacial O(n), siendo muy eficiente para grandes conjuntos de datos.
+
+
+- Quick Sort (Ordenamiento Rápido): También utiliza "divide y conquista" pero selecciona un elemento pivote para dividir la lista. Su complejidad temporal es O(n log n) en el caso promedio y O(n²) en el peor caso, con complejidad espacial O(log n).
+
+
+Caso Práctico
+Se desarrolló un programa en Python para implementar y comparar los tres algoritmos de
+ordenamiento mencionados. El programa incluye:
+
+
+1. Implementación de los tres algoritmos de ordenamiento
+2. Generación de arrays aleatorios para pruebas
+3. Medición de tiempos de ejecución
+4. Comparación de rendimientos
+5. Visualización gráfica de resultados
+
+
+Código de ejemplo:
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]
+        left = [x for x in arr if x < pivot]
+        middle = [x for x in arr if x == pivot]
+        right = [x for x in arr if x > pivot]
+        return quick_sort(left) + middle + quick_sort(right)
+
+
+def measure_time(sort_func, arr):
+    arr_copy = arr.copy()
+    start_time = time.time()
+    sort_func(arr_copy)
+    end_time = time.time()
+    return end_time - start_time
+
+
+Metodología Utilizada
+La elaboración del trabajo se realizó en las siguientes etapas:
+
+
+- Investigación teórica sobre los algoritmos de ordenamiento y sus características.
+- Implementación en Python de los tres algoritmos estudiados (Bubble Sort, Merge Sort, Quick Sort).
+- Desarrollo de funciones auxiliares para generación de datos y medición de rendimiento.
+- Pruebas con diferentes tamaños de arrays (100, 500, 1000, 2000, 3000, 4000, 5000 elementos).
+- Análisis comparativo de tiempos de ejecución.
+- Visualización de resultados mediante gráficos.
+- Registro de resultados y validación de funcionalidad.
+- Elaboración de este informe y preparación de anexos.
+
+
+Resultados Obtenidos
+- Los tres algoritmos ordenaron correctamente los arrays de prueba.
+- Se observó que Bubble Sort es significativamente más lento para arrays grandes debido a su
+  complejidad O(n²).
+- Merge Sort y Quick Sort mostraron rendimientos similares y superiores para arrays grandes,
+  confirmando su complejidad O(n log n).
+- Se generó una gráfica comparativa que visualiza las diferencias de rendimiento entre los
+  algoritmos.
+- Se comprendieron las diferencias en complejidad temporal y espacial entre los algoritmos
+  estudiados.
+- Se valoró la importancia de seleccionar el algoritmo adecuado según el contexto y el tamaño
+  de los datos a procesar.
+
+
+Conclusiones
+Los algoritmos de ordenamiento son pilares esenciales de la informática y la programación.
+Su estudio no sólo contribuye al desarrollo técnico del estudiante, sino que permite entender
+cómo optimizar procesos de organización de datos.
+
+
+El análisis comparativo demuestra que:
+- Bubble Sort es adecuado para listas pequeñas o cuando se requiere simplicidad de implementación.
+- Merge Sort es excelente para grandes volúmenes de datos y garantiza un rendimiento estable.
+- Quick Sort es muy eficiente en la práctica, aunque su rendimiento puede variar según la
+  elección del pivote.
+
+
+Este trabajo reforzó la importancia de comprender las complejidades computacionales y de
+seleccionar el algoritmo más apropiado según las características específicas del problema
+a resolver. La implementación práctica permitió observar directamente las diferencias de
+rendimiento y validar los conceptos teóricos estudiados.
+
+
+Bibliografía
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms.
+- Python Official Documentation: https://docs.python.org/3/library/
+- GeeksforGeeks: https://www.geeksforgeeks.org/sorting-algorithms/
+- Real Python: https://realpython.com/sorting-algorithms-python/
